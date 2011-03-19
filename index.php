@@ -31,7 +31,7 @@ $sudoku=$hwf->fetchAll(PDO::FETCH_NUM);
 		</tr></tfoot>
 	</table>
 	<script>
-		document.getElementById("sudoku").innerHTML="<?php echo $sudoku[0][1];?>".replace(/([\d\s]{9})/g,"<tr>$1</tr>").replace(/([\d\s])/g,"<td>$1</td>");
+		document.getElementById("sudoku").innerHTML="<?php echo $sudoku[0][1];?>".replace(/(\d{9})/g,"<tr>$1</tr>").replace(/(\d)/g,"<td>$1</td>").replace(/0/g,"");
 		document.getElementById("rank").innerHTML=["☆☆☆☆☆","★☆☆☆☆","★★☆☆☆","★★★☆☆","★★★★☆","★★★★★"][<?php echo $sudoku[0][2];?>];
 	</script>
 </body>
