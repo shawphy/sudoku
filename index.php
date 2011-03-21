@@ -19,6 +19,7 @@ $sudoku=$hwf->fetchAll(PDO::FETCH_NUM);
 		tfoot {font-size: 16px;}
 		tfoot td:first-child{text-align: left;}
 		tfoot td:last-child{text-align: right;}
+		tfoot tr:nth-child(2) a{font-size: 9px;color: #ccc;}
 	</style>
 </head>
 <body>
@@ -28,7 +29,9 @@ $sudoku=$hwf->fetchAll(PDO::FETCH_NUM);
 			<td colspan="3">#<?php echo $sudoku[0][0];?></td>
 			<td colspan="3" id="rank"></td>
 			<td colspan="3"><a href="" title="Next">Next</a></td>
-		</tr></tfoot>
+		</tr>
+		<tr><td colspan="9"><a href="https://github.com/shawphy/sudoku" title="Source Code">https://github.com/shawphy/sudoku</a></td></tr>
+		</tfoot>
 	</table>
 	<script>
 		document.getElementById("sudoku").innerHTML="<?php echo $sudoku[0][1];?>".replace(/(\d{9})/g,"<tr>$1</tr>").replace(/(\d)/g,"<td>$1</td>").replace(/0/g,"");
